@@ -13,33 +13,34 @@ LTE RRC OTA Packet
  Channel : 8
 ul-dcch
  message -> c1 -> ueCapabilityInformation
- rrc-TransactionIdentifier : 2
- criticalExtensions -> c1 -> ueCapabilityInformation-r8
-  ue-CapabilityRAT-ContainerList
-   [0]
-    rat-Type : nr
-   [1]
-    rat-Type : eutra
-   [2]
-    thisIsNotTechnicallySpecAccurate
-     at-all : true
-   [3]
-    nor -> is -> this
-     literally
-      whatsoever : true
-   [4]
+  rrc-TransactionIdentifier : 2
+  criticalExtensions -> c1 -> ueCapabilityInformation-r8
+   test
+   ue-CapabilityRAT-ContainerList
     [0]
-     do-embedded-arrays-work : yes
-     test
-      [0]
-       do-embedded-arrays-work-again : yes
+     rat-Type : nr
     [1]
-     do-embedded-arrays-work-again-again : yes
-   [5]
-   [6]
-   [7]
-    empty-indexes : yes
-   [8]`
+     rat-Type : eutra
+    [2]
+     thisIsNotTechnicallySpecAccurate
+      at-all : true
+    [3]
+     nor -> is -> this
+      literally
+       whatsoever : true
+    [4]
+     [0]
+      do-embedded-arrays-work : yes
+      test
+       [0]
+        do-embedded-arrays-work-again : yes
+     [1]
+      do-embedded-arrays-work-again-again : yes
+    [5]
+    [6]
+    [7]
+     empty-indexes : yes
+    [8]`
   );
 
   expect(output).toMatchObject({
@@ -60,6 +61,7 @@ ul-dcch
             criticalExtensions: {
               c1: {
                 'ueCapabilityInformation-r8': {
+                  test: {},
                   'ue-CapabilityRAT-ContainerList': [
                     {
                       'rat-Type': 'nr',

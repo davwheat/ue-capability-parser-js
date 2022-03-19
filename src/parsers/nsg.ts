@@ -137,6 +137,10 @@ export default function parseNsgLogToObject(text: string): Record<string, any> {
         currentData = currentData[k];
         currentPath.push(k);
       });
+
+      if (nextLine && nextLine.length - nextLine.trimStart().length <= newIndent) {
+        currentPath.pop();
+      }
     }
 
     // clean-up
