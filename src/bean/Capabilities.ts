@@ -1,8 +1,5 @@
-export interface ComboLte {}
-export interface ComboNr {}
-
-export interface ComponentLte {}
-export interface ComponentNr {}
+import { ComboLte } from "./lte/ComboLte";
+import { ComponentLte } from "./lte/ComponentLte";
 
 type ConstructorParams =
   | {
