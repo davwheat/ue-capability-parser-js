@@ -3,6 +3,7 @@ import { shallowEqualObjects } from 'shallow-equal';
 export interface IComponent {
   compareTo(iComponent: IComponent): boolean;
   toStringExtended(): string;
+  toString(): string;
 
   band: number;
   classDL: string;
